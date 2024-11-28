@@ -7,5 +7,8 @@ defmodule ServerWeb.Router do
 
   scope "/api", ServerWeb do
     pipe_through :api
+
+    get "/products", ProductController, :get_all
+    post "/products", ProductController, :create
   end
 end
