@@ -12,13 +12,26 @@ defmodule Server.Product do
   @doc """
   Creates a product.
   """
-  def create_product(attrs \\ %{}) do
+  def create_product(
+        %{
+          "cart_id" => cart_id,
+          "description" => description,
+          "name" => name,
+          "photoUrl" => photoUrl,
+          "price" => price
+        } = attrs \\ %{}
+      ) do
     IO.inspect("in create_product before repo.create")
     IO.inspect(attrs)
-    %{}
-    |> Product.changeset(attrs)
+
+    %Product{}
+    |> Product.changeset(%{
+      cart_id: cart_id,
+      description: description,
+      name: name,
+      photoUrl: photoUrl,
+      price: price
+    })
     |> Repo.insert()
   end
-
 end
-

@@ -9,13 +9,14 @@ defmodule ServerWeb.ProductController do
     json(conn, products)
   end
 
-  def create(conn, params) do
-    IO.inspect(params)
-    case Product.create_product(params) do
-      {:ok, product} ->
+  def create(conn, %{"product" => product}) do
+    IO.inspect(product)
+
+    case Product.create_product(product) do
+      {:ok, %{:id => id, :name => name}} ->
         conn
         |> put_status(:created)
-        |> json(product)
+        |> json(%{"id" => id, "name" => name})
 
       {:error, _changeset} ->
         conn
