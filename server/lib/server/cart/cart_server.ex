@@ -41,10 +41,8 @@ defmodule Server.Cart.CartServer do
   @impl true
   def handle_call({:remove_item, product_id}, _from, %{items: items} = state) do
     if Map.has_key?(state, product_id) do
-      IO.inspect("inside if")
       {:reply, :ok, %{state | items: Map.delete(items, product_id)}}
     else
-      IO.inspect("inside else")
       {:reply, :error, state}
     end
   end

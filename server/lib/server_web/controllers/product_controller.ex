@@ -10,7 +10,6 @@ defmodule ServerWeb.ProductController do
   end
 
   def create(conn, %{"product" => product}) do
-    IO.inspect(product)
 
     case Product.create_product(product) do
       {:ok, %{:id => id, :name => name}} ->

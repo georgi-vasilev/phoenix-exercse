@@ -8,7 +8,6 @@ defmodule Server.Cart do
 
   def add_item(cart_pid, product_id) do
     product = Product.exists(product_id)
-    IO.inspect(product)
 
     if product !== nil do
       CartServer.add_item(cart_pid, product_id)
