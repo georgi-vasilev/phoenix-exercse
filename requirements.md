@@ -1,7 +1,8 @@
 # **Homework Assignment: Simple Shopping Cart with Phoenix and GenServers**
 
 ## **Objective**
-In this example, you will create a small shopping cart app, where the user can add/remove items while ordering products online. The products are persisted in the database, while the cart items are kept in a GenServer.
+In this example, you will create a small shopping cart app, where the user can add/remove items while ordering products
+online. The products are persisted in the database, while the cart items are kept in a GenServer.
 
 ## **Requirements**
 
@@ -21,6 +22,11 @@ In this example, you will create a small shopping cart app, where the user can a
     Remove an item from the shopping cart by product ID
 
 ### 6. **POST /cart/checkout endpoint**
-    Complete the order. The endpoint accepts an object with user details (name, address etc.) and returns a "Thank you" message (eg. "Thank you for your order, XXX. The products will be shipped to YYY). This actions should also clear the list of cart items.
+    Complete the order. The endpoint accepts an object with user details (name, address etc.) and returns a "Thank you"
+    message (eg. "Thank you for your order, XXX. The products will be shipped to YYY).
+    This actions should also clear the list of cart items.
 
 ### *7. Add UI (MVC or LiveView) that use all of the above endpoints
+
+
+### *8. Add authentication for the user and add registries.

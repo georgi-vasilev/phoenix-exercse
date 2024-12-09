@@ -7,9 +7,10 @@ defmodule Server.Repo.Migrations.CreateProducts do
       add :photoUrl, :string
       add :price, :decimal
       add :description, :string
-      add :cart_id, :integer
 
       timestamps(type: :utc_datetime)
     end
+
+    create unique_index(:users, [:email])
   end
 end
